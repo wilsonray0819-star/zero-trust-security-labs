@@ -1,79 +1,25 @@
-# Lab 03 – Network Segmentation and Zero Trust Network Access (ZTNA)
+## 🔐 Policy Validation and Monitoring (Conditional Access)
 
-## Objective
-Implement Zero Trust network controls by segmenting network access and enforcing application-level connectivity using Zero Trust Network Access (ZTNA) principles.
+To ensure Zero Trust controls were implemented safely and effectively, this lab includes **Conditional Access policy validation** using Microsoft Entra ID reporting.
 
-This lab removes implicit trust from the network and ensures access is granted only after identity, device, and policy verification.
+The Conditional Access policy **CA-Require-Compliant-Windows-Device** was deployed in **Report-only** mode to evaluate enforcement impact without risking user lockout. This allowed real sign-in behavior to be analyzed prior to full enforcement.
 
----
+### Validation Approach
 
-## Zero Trust Principle
-- Verify explicitly
-- Use least privilege access
-- Assume breach
+Using the **Policy impact** view in Microsoft Entra, the following metrics were reviewed:
 
-This lab focuses on **reducing lateral movement and network attack surface**.
+- Total sign-in activity over time  
+- Percentage of sign-ins evaluated by the policy  
+- Policy application results in Report-only mode  
 
----
+This validation step aligns with Zero Trust best practices by:
 
-## Tools and Technologies
-- Azure Virtual Network (VNet)
-- Network Security Groups (NSGs)
-- Private endpoints
-- Zero Trust Network Access (ZTNA) concepts
-- Microsoft Entra ID Conditional Access
+- Verifying access controls before enforcement  
+- Reducing the risk of accidental access disruption  
+- Providing measurable insight into policy effectiveness  
 
----
+Once validated, this policy can be safely transitioned from **Report-only** to **On**, ensuring only compliant Windows devices can access protected resources.
 
-## Network Architecture Overview
-- Created segmented network design
-- Restricted east-west traffic
-- Limited access paths to only required services
-- Removed reliance on traditional perimeter security
+**Evidence:**  
+Conditional Access policy impact metrics demonstrating enforcement readiness.
 
----
-
-## Network Segmentation
-- Implemented subnet-level isolation
-- Applied Network Security Groups (NSGs) to control traffic
-- Denied unnecessary inbound and outbound access
-- Allowed only explicit, policy-based traffic flows
-
----
-
-## Zero Trust Network Access (ZTNA)
-- Enforced identity-aware access to applications
-- Eliminated broad network-level access
-- Access granted only after:
-  - User authentication
-  - Device compliance validation
-  - Conditional Access policy evaluation
-
----
-
-## Validation
-- Verified restricted network connectivity
-- Confirmed blocked lateral movement between segments
-- Tested access enforcement using identity-based controls
-
----
-
-## Outcome
-This lab demonstrates the ability to:
-- Design secure, segmented networks
-- Apply Zero Trust principles at the network layer
-- Reduce attack surface and lateral movement risk
-
----
-
-## Skills Demonstrated
-- Network segmentation
-- Azure networking fundamentals
-- Zero Trust Network Access (ZTNA)
-- Security group configuration
-- Identity-aware networking
-
----
-
-## Notes
-Screenshots and validation evidence will be added after all lab documentation is complete.
