@@ -1,125 +1,111 @@
-# Lab 04 – Application Access and Authentication
+## Lab 04 – Application Access and Authentication
 
-## Objective
-Implement Zero Trust application access controls by securing applications with modern authentication, identity-based access policies, and least privilege principles.
+### Objective
+Implement Zero Trust application access controls by securing cloud applications using modern authentication, Conditional Access policies, and least privilege principles.
 
-This lab focuses on removing implicit trust from application access and enforcing authentication and authorization before access is granted.
-
----
-
-## Zero Trust Principle
-- Verify explicitly
-- Use least privilege access
-- Assume breach
-
-This lab demonstrates that **applications are protected independently of the network**.
+This lab demonstrates how applications are protected independently of the network by enforcing identity-aware access decisions before access is granted.
 
 ---
 
-## Tools and Technologies
-- Microsoft Entra ID
-- Conditional Access policies
-- OAuth 2.0 / Modern authentication
-- Microsoft Defender for Cloud Apps
+### Overview
+Traditional security models rely on network location to implicitly trust application access. In a Zero Trust architecture, **applications are protected using identity, authentication strength, and risk signals**, regardless of where the user is connecting from.
+
+In this lab, applications are secured using:
+- Modern authentication
+- Conditional Access enforcement
 - Least privilege access controls
 
----
-
-## Application Security Overview
-- Applications protected using identity-aware controls
-- Access evaluated before application access is granted
-- Policies enforce authentication strength and user context
+This aligns with Microsoft Zero Trust principles:
+- Verify explicitly  
+- Use least privilege access  
+- Assume breach  
 
 ---
 
-## Modern Authentication
+### Technologies Used
+- Microsoft Entra ID (Azure AD)
+- Conditional Access
+- OAuth 2.0 / Modern Authentication
+- Microsoft Defender for Cloud Apps
+
+---
+
+### Application Security Configuration
+
+#### Modern Authentication
 - Enforced modern authentication methods
 - Removed legacy authentication where applicable
 - Ensured secure token-based authentication flows
 
----
-
-## Conditional Access for Applications
-- Required user authentication before app access
-- Evaluated:
+#### Conditional Access for Applications
+- Required authentication before application access
+- Evaluated access based on:
   - User identity
   - Sign-in risk
   - Authentication strength
 - Blocked access when conditions were not met
 
----
-
-## Least Privilege Application Access
-- Limited access to only required users
-- Prevented over-permissioned application access
-- Reduced application attack surface
+#### Least Privilege Application Access
+- Limited application access to only required users
+- Prevented over-permissioned access
+- Reduced overall application attack surface
 
 ---
 
-## Validation
-- Verified access enforcement using Conditional Access
-- Confirmed blocked access for non-compliant sign-ins
-- Tested authentication flows for protected applications
+### Policy Validation and Monitoring
+
+To ensure Conditional Access controls were implemented safely, policies were deployed using **Report-only mode** prior to enforcement.
+
+This allowed real sign-in activity to be evaluated without risking user lockout or service disruption.
+
+#### Validation Steps Performed
+
+**1. Device Compliance Baseline**
+- Verified Windows device compliance requirements were defined
+- Confirmed compliance policy availability prior to enforcement  
+- Evidence: `01-windows-device-compliance-policy.png`
+
+**2. Conditional Access Policy Scope**
+- Confirmed policy applied to all users with appropriate exclusions
+- Verified all cloud applications were targeted  
+- Evidence: `02-conditional-access-policy-scope.png`
+
+**3. Grant Controls (Strong MFA)**
+- Required phishing-resistant MFA using authentication strength
+- Explicitly excluded SMS-based MFA  
+- Evidence: `03-conditional-access-grant-strong-mfa.png`
+
+**4. Policy Deployment State**
+- Confirmed policy status set to Report-only
+- Validated safe deployment prior to full enforcement  
+- Evidence: `04-conditional-access-policy-overview.png`
 
 ---
 
-## Outcome
+### Zero Trust Alignment
+This lab reinforces Zero Trust principles by:
+
+- Verifying access explicitly before application access is granted
+- Enforcing strong, phishing-resistant authentication
+- Applying identity-based access decisions
+- Reducing application risk through least privilege enforcement
+
+---
+
+### Outcome
 This lab demonstrates the ability to:
-- Secure application access using Zero Trust principles
+
+- Secure cloud applications using Zero Trust principles
 - Enforce authentication before authorization
-- Protect cloud applications using identity-aware controls
+- Protect applications using identity-aware access controls
+- Validate policies safely prior to enforcement
 
 ---
 
-## Skills Demonstrated
+### Skills Demonstrated
 - Application access control
 - Conditional Access policy design
 - Modern authentication concepts
 - Least privilege enforcement
 - Cloud application security
-- ---
 
-## 🔐 Policy Validation and Monitoring (Conditional Access)
-
-### Validation Strategy
-
-To ensure Conditional Access controls were implemented safely and aligned with Zero Trust principles, policies were initially deployed using **Report-only** mode. This approach allowed real sign-in activity to be evaluated without disrupting user access.
-
-### Validation Steps Performed
-
-The following validation checks were conducted using **Microsoft Entra ID**:
-
-- **Windows Device Compliance Policy**
-  - Verified baseline device security requirements were defined.
-  - Confirmed policy availability prior to enforcement.
-  - Screenshot: `01-windows-device-compliance-policy.png`
-
-- **Conditional Access Policy Scope**
-  - Confirmed policy applied to **all users** with appropriate exclusions.
-  - Verified **all cloud resources** were targeted.
-  - Screenshot: `02-conditional-access-policy-scope.png`
-
-- **Grant Controls (Strong MFA)**
-  - Enforced phishing-resistant MFA using **authentication strength**.
-  - SMS-based MFA explicitly excluded.
-  - Screenshot: `03-conditional-access-grant-strong-mfa.png`
-
-- **Policy Overview and Deployment State**
-  - Confirmed policy status set to **Report-only**.
-  - Validated safe deployment prior to full enforcement.
-  - Screenshot: `04-conditional-access-policy-overview.png`
-
-### Zero Trust Alignment
-
-This validation process supports Zero Trust best practices by:
-
-- Verifying access controls before enforcement
-- Reducing the risk of accidental user lockouts
-- Enforcing strong, phishing-resistant authentication
-- Applying identity-based access decisions using least privilege principles
-
-
----
-
-## Notes
-Screenshots and validation evidence will be added after all lab documentation is complete.
