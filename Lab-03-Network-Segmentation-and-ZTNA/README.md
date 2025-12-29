@@ -1,25 +1,70 @@
-## 🔐 Policy Validation and Monitoring (Conditional Access)
+## Lab 03 – Policy Validation and Monitoring (Conditional Access)
 
-To ensure Zero Trust controls were implemented safely and effectively, this lab includes **Conditional Access policy validation** using Microsoft Entra ID reporting.
+### Objective
+Validate Conditional Access policies safely using Microsoft Entra ID reporting tools to ensure Zero Trust controls function as intended before full enforcement.
 
-The Conditional Access policy **CA-Require-Compliant-Windows-Device** was deployed in **Report-only** mode to evaluate enforcement impact without risking user lockout. This allowed real sign-in behavior to be analyzed prior to full enforcement.
+This lab focuses on monitoring, analysis, and risk reduction prior to enabling enforcement.
 
-### Validation Approach
+---
 
-Using the **Policy impact** view in Microsoft Entra, the following metrics were reviewed:
+### Overview
+To prevent accidental user lockout and service disruption, Conditional Access policies should be evaluated in **Report-only mode** before being enforced.
 
-- Total sign-in activity over time  
-- Percentage of sign-ins evaluated by the policy  
-- Policy application results in Report-only mode  
+In this lab, the policy:
 
-This validation step aligns with Zero Trust best practices by:
+**CA-Require-Compliant-Windows-Device**
 
-- Verifying access controls before enforcement  
-- Reducing the risk of accidental access disruption  
-- Providing measurable insight into policy effectiveness  
+was deployed in Report-only mode to observe real sign-in behavior and measure potential enforcement impact.
 
-Once validated, this policy can be safely transitioned from **Report-only** to **On**, ensuring only compliant Windows devices can access protected resources.
+This approach aligns with Microsoft Zero Trust guidance:
+- Verify explicitly  
+- Assume breach  
+- Enforce access based on risk and trust signals  
 
-**Evidence:**  
-Conditional Access policy impact metrics demonstrating enforcement readiness.
+---
+
+### Technologies Used
+- Microsoft Entra ID (Azure AD)
+- Conditional Access
+- Entra Sign-in Logs
+- Policy Impact Reporting
+
+---
+
+### Validation Methodology
+
+The following Entra ID reporting views were analyzed:
+
+- **Policy impact**
+- **Sign-in logs**
+- **Report-only evaluation results**
+
+Metrics reviewed included:
+- Total sign-in activity over time
+- Percentage of sign-ins evaluated by the policy
+- Policy result outcomes if enforcement were enabled
+
+---
+
+### Zero Trust Alignment
+
+This validation process supports Zero Trust principles by:
+
+- Verifying policy behavior before enforcement
+- Reducing risk of unintended access disruption
+- Ensuring access decisions are based on device compliance signals
+- Providing measurable evidence of policy effectiveness
+
+---
+
+### Outcome
+The Conditional Access policy was validated successfully in Report-only mode.  
+Based on observed impact metrics, the policy can be safely transitioned to **On** to enforce access restrictions requiring compliant Windows devices.
+
+---
+
+### Evidence
+- Conditional Access policy impact metrics
+- Report-only evaluation results demonstrating enforcement readiness
+
 
