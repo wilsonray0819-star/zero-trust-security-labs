@@ -1,70 +1,44 @@
-## Lab 03 – Policy Validation and Monitoring (Conditional Access)
+# Lab 03 – Policy Validation and Monitoring (Conditional Access)
 
-### Objective
-Validate Conditional Access policies safely using Microsoft Entra ID reporting tools to ensure Zero Trust controls function as intended before full enforcement.
+## Objective
+Validate Conditional Access policies safely using reporting and monitoring features in Microsoft Entra ID to ensure Zero Trust controls are effective prior to enforcement.
 
-This lab focuses on monitoring, analysis, and risk reduction prior to enabling enforcement.
-
----
-
-### Overview
-To prevent accidental user lockout and service disruption, Conditional Access policies should be evaluated in **Report-only mode** before being enforced.
-
-In this lab, the policy:
-
-**CA-Require-Compliant-Windows-Device**
-
-was deployed in Report-only mode to observe real sign-in behavior and measure potential enforcement impact.
-
-This approach aligns with Microsoft Zero Trust guidance:
+## Zero Trust Principles
 - Verify explicitly  
 - Assume breach  
-- Enforce access based on risk and trust signals  
 
----
-
-### Technologies Used
-- Microsoft Entra ID (Azure AD)
+## Tools and Technologies
+- Microsoft Entra ID
 - Conditional Access
-- Entra Sign-in Logs
-- Policy Impact Reporting
+- Sign-in logs and reporting
 
----
+## Configuration Overview
+The Conditional Access policy **CA-Require-Compliant-Windows-Device** was deployed in **Report-only mode** to evaluate enforcement impact without risking user lockout.
 
-### Validation Methodology
+This approach allowed real sign-in behavior to be analyzed before enabling full enforcement.
 
-The following Entra ID reporting views were analyzed:
-
-- **Policy impact**
-- **Sign-in logs**
-- **Report-only evaluation results**
-
-Metrics reviewed included:
+## Validation Approach
+Using the Policy impact view in Microsoft Entra, the following metrics were reviewed:
 - Total sign-in activity over time
 - Percentage of sign-ins evaluated by the policy
-- Policy result outcomes if enforcement were enabled
+- Policy application results in Report-only mode
 
----
+## Validation
+This validation step aligns with Zero Trust best practices by:
+- Verifying access controls before enforcement
+- Reducing the risk of accidental access disruption
+- Providing measurable insight into policy effectiveness
 
-### Zero Trust Alignment
+## Outcome
+Once validated, this policy can be safely transitioned from Report-only to **On**, ensuring only compliant Windows devices can access protected resources.
 
-This validation process supports Zero Trust principles by:
+## Skills Demonstrated
+- Conditional Access policy validation
+- Risk-aware access control
+- Zero Trust monitoring and reporting
 
-- Verifying policy behavior before enforcement
-- Reducing risk of unintended access disruption
-- Ensuring access decisions are based on device compliance signals
-- Providing measurable evidence of policy effectiveness
+## Evidence
+Conditional Access policy impact metrics demonstrating enforcement readiness.
 
----
-
-### Outcome
-The Conditional Access policy was validated successfully in Report-only mode.  
-Based on observed impact metrics, the policy can be safely transitioned to **On** to enforce access restrictions requiring compliant Windows devices.
-
----
-
-### Evidence
-- Conditional Access policy impact metrics
-- Report-only evaluation results demonstrating enforcement readiness
 
 
