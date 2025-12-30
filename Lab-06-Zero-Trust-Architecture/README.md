@@ -106,6 +106,16 @@ This capstone demonstrates the ability to:
 
 ---
 
+## Zero Trust Architecture Overview
+
+The following diagram represents the unified Zero Trust architecture implemented across Labs 01–05.  
+Each security pillar feeds continuous signals into a centralized Zero Trust policy engine responsible for verification, decision-making, and enforcement.
+
+![Zero Trust Architecture Overview](screenshots/01-zero-trust-architecture-overview.png)
+
+This architecture demonstrates how identity, device posture, network controls, application access, data protection, and infrastructure security operate as a single security model rather than isolated controls.
+
+
 ## Portfolio Summary
 This project demonstrates an end-to-end Zero Trust implementation using Microsoft cloud security technologies. Each lab represents a security pillar, and this capstone shows how they function together as a cohesive architecture.
 
